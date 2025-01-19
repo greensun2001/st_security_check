@@ -30,7 +30,7 @@ def check_password():
         return True
 
     # Show inputs for username + password.
-    about_image = "images/about.png"
+    about_image = "hu_utc.png"
     st.image(about_image, use_column_width=True)
 
     login_form()
