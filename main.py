@@ -3,7 +3,7 @@ import streamlit as st
 
 def check_password():
     """Returns `True` if the user had a correct password."""
-
+    
     def login_form():
         """Form with widgets to collect user information"""
         with st.form("Credentials"):
@@ -30,6 +30,9 @@ def check_password():
         return True
 
     # Show inputs for username + password.
+    about_image = "images/about.png"
+    st.image(about_image, use_column_width=True)
+
     login_form()
     if "password_correct" in st.session_state:
         st.error("😕 User not known or password incorrect")
