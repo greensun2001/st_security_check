@@ -30,8 +30,14 @@ def check_password():
         return True
 
     # Show inputs for username + password.
-    about_image = "hu_utc.png"
-    st.image(about_image, use_column_width=True)
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.write(' ')
+    with col2:
+        about_image = "hu_utc.png"
+        st.image(about_image, use_column_width=False)
+    with col3:
+        st.write(' ')
 
     login_form()
     if "password_correct" in st.session_state:
