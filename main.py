@@ -6,6 +6,13 @@ def check_password():
     
     def login_form():
         """Form with widgets to collect user information"""
+        col1, col2 = st.columns(2)
+        with col1:
+            about_image = "hu_utc.png"
+            st.image(about_image, use_column_width=False)
+        with col2:
+            st.write("# :rainbow[Shear program]")
+        st.write('')
         with st.form("Credentials"):
             st.text_input("Username", key="username")
             st.text_input("Password", type="password", key="password")
@@ -30,15 +37,6 @@ def check_password():
         return True
 
     # Show inputs for username + password.
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.write(' ')
-    with col2:
-        about_image = "hu_utc.png"
-        st.image(about_image, use_column_width=False)
-    with col3:
-        st.write(' ')
-
     login_form()
     if "password_correct" in st.session_state:
         st.error("😕 User not known or password incorrect")
